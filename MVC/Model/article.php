@@ -10,7 +10,39 @@
 
 
             public function __construct($connexion){
-                
+                $this->connexion = $connexion;
+            }
+
+            public function getArt_id(){
+                return $this->art_id;
+            }
+
+            public function getArt_nom(){
+                return $this->art_nom;
+            }
+
+            public function getArt_prix(){
+                return $this->art_prix;
+            }
+
+            public function getArt_poid(){
+                return $this->art_poid;
+            }
+
+            public function setArt_id($id){
+                $this->art_id = $id;
+            }
+
+            public function setArt_nom($nom){
+                $this->art_nom = $nom;
+            }
+
+            public function setArt_prix($prix){
+                $this->art_prix = $prix;
+            }
+
+            public function setArt_poid($poid){
+                $this->art_poid = $poid;
             }
         }
     ?>
