@@ -13,13 +13,13 @@
     function loadController($controller){
         switch($controller){
             case 'articles' :
-                $strFileController = 'controller/articlesController.php';
+                $strFileController = 'controller/articleController.php';
                 require_once $strFileController;
                 $controllerObj = new ArticlesController();
             break;
 
             default :
-                $strFileController = 'controller/articlesController.php';
+                $strFileController = 'controller/articleController.php';
                 require_once $strFileController;
                 $controllerObj = new ArticlesController();
             break;

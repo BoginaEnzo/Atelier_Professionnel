@@ -6,6 +6,8 @@
         public function __construct(){
             require_once __DIR__."/../core/connecteur.php";
             require_once __DIR__."/../model/article.php";
+            $this->connecteur = new Connecteur();
+            $this->connexion = $this->connecteur->connexion();
         }
 
         public function run($action){
@@ -62,7 +64,7 @@
         }
 
         function view($name, $data){
-            require_once __DIR__."/../view".$name."View.php";
+            require_once __DIR__."/../view/".$name."View.php";
         }
     }
 

@@ -6,9 +6,8 @@
         private $driver;
         private $host, $user, $pass, $database, $charset;
 
-        // Définition du constructeur pour l'init des attributs
         public function __construct() {
-            require_once '../config/database.php';
+            require_once __DIR__ . '/../config/database.php';
             $this->driver = DB_DRIVER;
             $this->host = DB_HOST;
             $this->user = DB_USER;
