@@ -44,5 +44,14 @@
             public function setArt_poid($poid){
                 $this->art_poid = $poid;
             }
+
+            public function getAll(){
+                $query = $this->connexion->prepare("SELECT art_id, art_nom, art_prix, art_poid
+                FROM ".$this->table);
+                $query->execute();
+                $result = $query->fetchAll();
+                $this->connexion = null;
+                return $result;
+            }
         }
     ?>
