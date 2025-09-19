@@ -64,7 +64,7 @@
             }
 
             public function insert(){
-                $query = $this->connexion->prepare("INSERT INTO".$this->table."(art_nom, art_prix, art_poid) 
+                $query = $this->connexion->prepare("INSERT INTO ".$this->table."(art_nom, art_prix, art_poid) 
                 VALUES (:nom, :prix, :poid)");
 
                 $result = $query->execute(array(
@@ -77,7 +77,7 @@
             }
 
             public function update(){
-                $query = $this->connexion->prepare("UPDATE".$this->table."SET art_nom = :nom, art_prix = :prix, art_poid = :poid 
+                $query = $this->connexion->prepare("UPDATE ".$this->table."SET art_nom = :nom, art_prix = :prix, art_poid = :poid 
                 WHERE art_id = :id");
 
                 $result = $query->execute(array(

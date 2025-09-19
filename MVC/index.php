@@ -3,11 +3,12 @@
 
     //Gestion du controller par défaut
     if(isset($_GET["controller"])){
-        $ccontrollerObj = loadController($GET["controller"]);
+        $controllerObj = loadController($_GET["controller"]);
         loadAction($controllerObj);
     }
     else{
         $controllerObj = loadController(CONTROLLER_DEFAULT);
+        loadAction($controllerObj);
     }
 
     function loadController($controller){
@@ -16,13 +17,12 @@
                 $strFileController = 'controller/articleController.php';
                 require_once $strFileController;
                 $controllerObj = new ArticlesController();
-            break;
-
+                break;
             default :
                 $strFileController = 'controller/articleController.php';
                 require_once $strFileController;
                 $controllerObj = new ArticlesController();
-            break;
+                break;
         }
 
         return $controllerObj;
