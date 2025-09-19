@@ -15,6 +15,8 @@
                 case "index" : 
                     $this->index();
                     break;
+                case "detail" :
+                    $this->detail();
                 case "creer" : 
                     $this->creer();
                     break;
