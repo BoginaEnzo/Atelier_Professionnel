@@ -56,8 +56,8 @@
 
             public function getById($id){
                 $query = $this->connexion->prepare("SELECT art_id, art_nom, art_prix, art_poid
-                FROM".$this->table."WHERE art_id = :id");
-                $query-> execute(array("id"=>$id));
+                FROM ".$this->table." WHERE art_id = :id");
+                $query-> execute(array("id"=> $id));
                 $result = $query->fetchObject();
                 $this->connexion = null;
                 return $result;
