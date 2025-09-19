@@ -11,7 +11,7 @@
     <div class="col-lg-5 mr-auto">
         <form action="index.php?controller=articles&action=maj" method="POST">
             <h3>Article détaillé</h3>
-            <br />
+            <hr />
             <input type="hidden" name="id" value="<?php echo $data["article"]->art_id ?>"/>
             Nom: <input type="text" name="nom" value="<?php echo $data["article"]->art_nom ?>" class="form-control"/>
             Prix: <input type="text" name="prix" value="<?php echo $data["article"]->art_prix ?>" class="form-control"/>
