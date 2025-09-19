@@ -17,6 +17,14 @@
             Prix: <input type="text" name="prix" value="<?php echo $data["article"]->art_prix ?>" class="form-control"/>
             Poids: <input type="text" name="poids" value="<?php echo $data["article"]->art_poids ?>" class="form-control"/>
             <input type="submit" value="Modifier" class="btn btn-success"/>
-            
+        </form>
+        <form action="index.php?controller=articles&action=delete" method="POST">
+            <h3> Article détaillé</h3>
+            <hr />
+            <input type="hidden" name="idDel" value="<?php echo $data["article"]->art_id ?>"/>
+            <input type="submit" value="supprimer" class="btn btn-danger"/>
+        </form>
+        <a href="index.php" class="btn btn-info">Supprimer</a>
+    </div>          
 </body>
 </html>
