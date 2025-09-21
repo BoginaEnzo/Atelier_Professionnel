@@ -63,6 +63,15 @@
             header('Location: index.php');
         }     
     }
+
+    function delete(){
+        $Article = new Article($this->connexion);
+        $Article->setArt_id($_POST["idDel"]);   
+        if($Article->delete()){
+            header('Location: index.php');
+        }     
+    }
+
     function view($name, $data){
         require_once __DIR__ . "/../view/".$name."View.php";
     } 

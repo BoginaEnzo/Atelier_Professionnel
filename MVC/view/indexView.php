@@ -32,7 +32,6 @@
     </div>
     
     <section class="col-lg-7" style="height:400px;overflow-y:scroll;">
-        <!-- $article["nom"]; -> $article["art_nom"]; -->
         <?php foreach($data["article"] as $article) {?>
             <?php echo $article["art_nom"]; ?> - 
             <?php echo $article["art_prix"]; ?> - 
