@@ -77,7 +77,7 @@
             // Méthodes pour les opérations CRUD
             // Récupérer tous les animaux
             public function getAll(){
-                $query = $this->connexion->prepare("SELECT animal_id, animal_nom, animal_espece, animal_statut, animal_age, animal_race, animal_photo
+                $query = $this->connexion->prepare("SELECT id, nom, espece, statut, age, race, photo
                 FROM ".$this->table);
                 $query->execute();
                 $result = $query->fetchAll();

@@ -17,7 +17,7 @@
     </style>
 </head>
 <body>
-    // Form pour ajouter un animal
+    <!-- Form pour ajouter un animal -->
     <form action ="index.php?controller=animals&action=creer" 
     method ="post" class="col-lg-5">
         <h3>Add animal</h3>
@@ -33,8 +33,8 @@
         <h3>Animals</h3>
         <hr/> 
     </div>
-    
-    // Liste des animaux
+
+    <!-- Section pour afficher la liste des animaux -->
     <section class="col-lg-7" style="height:400px;overflow-y:scroll;">
         <?php foreach($data["animal"] as $animal) {?>
             <?php echo $animal["animal_nom"]; ?> - 
