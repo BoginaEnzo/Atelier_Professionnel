@@ -12,23 +12,26 @@ if(isset($_GET["controller"])){
     loadAction($controllerObj);  
 }
 
+// Chargement du contrôleur
 function loadController($controller){
+    // Choix du contrôleur en fonction de la valeur passée en paramètre
     switch($controller){
-        case 'articles' :
-            $strFileController = 'controller/articleController.php';
+        case 'animals' :
+            $strFileController = 'controller/animalController.php';
             require_once $strFileController;
-            $controllerObj = new ArticlesController();
+            $controllerObj = new AnimalController();
         break;
 
         default :
-            $strFileController = 'controller/articleController.php';
+            $strFileController = 'controller/animalController.php';
             require_once $strFileController;
-            $controllerObj = new ArticlesController();
+            $controllerObj = new AnimalController();
         break;
     }
     return $controllerObj;
 }
 
+// Chargement de l'action
 function loadAction($controllerObj){
     if(isset($_GET["action"])){
         $controllerObj->run($_GET["action"]);
