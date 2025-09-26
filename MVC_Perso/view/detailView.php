@@ -18,18 +18,22 @@
     </style>
 </head>
 <body>
+    // Form pour modifier un animal
     <div class="col-lg-5 mr-auto">
-        <form action="index.php?controller=articles&action=maj" method="post">
-            <h3>Article detaillé</h3>
+        <form action="index.php?controller=animals&action=maj" method="post">
+            <h3>Animal detaillé</h3>
             <hr/>
-            <input type="hidden" name="id" value="<?php echo $data["article"]->art_id ?>" />
-            Nom: <input type="text" name="nom" value="<?php echo $data["article"]->art_nom ?>" class="form-control" />
-            Prix: <input type="text" name="prix" value="<?php echo $data["article"]->art_prix ?>" class="form-control" />
-            Poid: <input type="text" name="poid" value="<?php echo $data["article"]->art_poid ?>" class="form-control" />
+            <input type="hidden" name="id" value="<?php echo $data["animal"]->animal_id ?>" />
+            Nom: <input type="text" name="nom" value="<?php echo $data["animal"]->animal_nom ?>" class="form-control" />
+            Espece: <input type="text" name="espece" value="<?php echo $data["animal"]->animal_espece ?>" class="form-control" />
+            Age: <input type="text" name="age" value="<?php echo $data["animal"]->animal_age ?>" class="form-control" />
+            Race: <input type="text" name="race" value="<?php echo $data["animal"]->animal_race ?>" class="form-control" />
+            Photo: <input type="text" name="photo" value="<?php echo $data["animal"]->animal_photo ?>" class="form-control" />
             <input type="submit" value="Modifier" class="btn btn-info"/>
         </form>
-        <form action="index.php?controller=articles&action=delete" method="post">
-            <input type="hidden" id="idDel" name="idDel" value="<?php echo $data["article"]->art_id ?>" />
+        // Form pour supprimer un animal
+        <form action="index.php?controller=animals&action=delete" method="post">
+            <input type="hidden" id="idDel" name="idDel" value="<?php echo $data["animal"]->animal_id ?>" />
             <input type="submit" value="Supprimer" class="btn btn-danger"/>
         </form>
 
