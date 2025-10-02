@@ -17,6 +17,7 @@
     </style>
 </head>
 <body>
+    <!-- Formulaire d'ajout d'un animal -->
     <div class="container" style="display:flex; flex-direction:column; align-items:center;">
         <form action="../index.php?controller=animals&action=creer" method="post" enctype="multipart/form-data" class="col-lg-5">
             <h3>Ajouter un animal</h3>

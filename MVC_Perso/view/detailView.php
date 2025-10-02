@@ -6,6 +6,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
+    <!-- Détails de l'animal -->
     <div class="container" style="display:flex; flex-direction:column; align-items:center;">
         <h2>Détails de l'animal</h2>
 

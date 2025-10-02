@@ -17,14 +17,16 @@
     </style>
 </head>
 <body>
+    <header style="margin-bottom:20px;">
+        <nav class="navbar navbar-default" >
+            <ul class="nav navbar-nav navbar-center" style="margin-top: 5px; display: flex; justify-content: center; width: 100%;">
+                <li class="active"><a href="index.php">Accueil</a></li>
+                <li class="active"><a href="view/ajouter.php">Ajouter un animal</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <div class="container" style="display:flex; flex-direction:column; align-items:center;">
-
-        <!-- Bouton Ajouter centré -->
-        <div style="margin-top:20px; text-align:center; margin-bottom:20px;">
-            <a href="view/ajouter.php" class="btn btn-primary">Ajouter un animal</a>
-        </div>
-
 
         <!-- Liste des animaux centrée -->
         <section style="max-width: 900px; width: 100%;">
