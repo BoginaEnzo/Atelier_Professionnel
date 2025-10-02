@@ -69,6 +69,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <input type="submit" value="Modifier" class="btn btn-primary" />
+                    <a href="index.php" class="btn btn-primary detail">Accueil</a>
                 </div>
             </div>
         </form>

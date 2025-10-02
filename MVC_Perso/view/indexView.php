@@ -68,7 +68,7 @@
                         <input type="hidden" id="idDel" name="idDel" value="<?php echo $Animal['id']; ?>" />
                         <input type="submit" value="Supprimer" class="btn btn-danger"/>
                     </form>
-                    <form action="index.php?controller=animals&action=detail&id=<?php echo $Animal['id']; ?>">
+                    <form>
                         <a href="index.php?controller=animals&action=detail&id=<?php echo $Animal['id']; ?>" 
                         class="btn btn-primary detail">Detail</a>  
                     </form>
