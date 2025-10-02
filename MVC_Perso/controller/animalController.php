@@ -71,7 +71,7 @@
             }
 
             if($Animal->insert()){
-                header('Location: index.php');
+                header('Location: index.php?controller=animal&action=index');
             }     
         }
 

@@ -17,65 +17,48 @@
     </style>
 </head>
 <body>
-    <!-- Form pour ajouter un animal -->
-    <form action="index.php?controller=animals&action=creer" method="post" enctype="multipart/form-data" class="col-lg-5">
-        <h3>Ajouter un animal</h3>
-        Nom: <input type="text" name="nom" class="form-control" required>
-        Age: <input type="number" name="age" class="form-control" required>
-        Espèce: 
-            <select name="espece" required class="form-control">
-                <option value="">Choisir une espèce</option>
-                <option value="chien">Chien</option>
-                <option value="chat">Chat</option>
-            </select>
-        Statut:
-            <select name="statut" required class="form-control">
-                <option value="">Choisir un statut</option>
-                <option value="adoption">À l'adoption</option>
-                <option value="adopte">Adopté</option>
-                <option value="acceuil">En accueil</option>
-            </select>
-        Race: <input type="text" name="race" class="form-control" required>
-        Photo: <input type="file" name="photo" id="photo" accept="image/*" class="form-control">
-        <br>
-        <input type="submit" value="Envoyer" class="btn btn-success">
-    </form>
+
+    <div class="container" style="display:flex; flex-direction:column; align-items:center;">
+
+        <!-- Bouton Ajouter centré -->
+        <div style="margin-top:20px; text-align:center; margin-bottom:20px;">
+            <a href="view/ajouter.php" class="btn btn-primary">Ajouter un animal</a>
+        </div>
 
 
-    <div class="col-lg-7">
-        <h3>Animaux</h3> 
-        <hr/> 
+        <!-- Liste des animaux centrée -->
+        <section style="max-width: 900px; width: 100%;">
+            <?php foreach ($data['animal'] as $Animal): ?>
+                <div style="border: 1px solid #ccc; padding: 15px; margin-bottom: 10px; text-align: center;">
+                    <strong><?= htmlspecialchars($Animal['nom']) ?></strong><br>
+                    Espèce : <?= htmlspecialchars($Animal['espece']) ?><br>
+                    Âge : <?= htmlspecialchars($Animal['age']) ?><br>
+                    Race : <?= htmlspecialchars($Animal['race']) ?><br>
+                    Statut : <?= htmlspecialchars($Animal['statut']) ?><br>
+                    <?php if (!empty($Animal['photo'])): ?>
+                        <img src="uploads/<?= htmlspecialchars($Animal['photo']) ?>" alt="Photo de <?= htmlspecialchars($Animal['nom']) ?>" style="max-width: 200px;">
+                    <?php else: ?>
+                        <p>Aucune photo disponible</p>
+                    <?php endif; ?>
+                    <br>
+                    <div class="btn-group" style="margin-top: 10px;">
+                        <!-- Modifier bouton detail -->
+                        <form>
+                            <a href="index.php?controller=animal&action=detail&id=<?= htmlspecialchars($Animal['id']) ?>" class="btn btn-primary" style="align:center; margin-bottom:5px;">Modifier</a>
+                        </form>
+
+                        <!-- Supprimer bouton -->
+                        <form action="index.php?controller=animals&action=delete" method="post" style="display:inline;">
+                            <input type="hidden" name="idDel" value="<?= htmlspecialchars($Animal['id']) ?>">
+                            <button type="submit" class="btn btn-danger" style="align:center; margin-bottom:5px;">Supprimer</button>
+                        </form>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </section>
+
     </div>
 
-    <!-- Section pour afficher la liste des animaux -->
-    <section class="col-lg-7" style="height:700px;overflow-y:scroll;">
-        <?php foreach ($data['animal'] as $Animal): ?>
-            <div>
-                <?= htmlspecialchars($Animal['nom']) ?><br>
-                Espèce : <?= htmlspecialchars($Animal['espece']) ?><br>
-                Age : <?= htmlspecialchars($Animal['age']) ?><br>
-                Race : <?= htmlspecialchars($Animal['race']) ?><br>
-                Statut : <?= htmlspecialchars($Animal['statut']) ?><br>
-                <?php if (!empty($Animal['photo'])): ?>
-                    <img src="uploads/<?= htmlspecialchars($Animal['photo']) ?>" alt="Photo de <?= htmlspecialchars($Animal['nom']) ?>" style="max-width:200px;">
-                <?php else: ?>
-                    <p>Aucune photo</p>
-                <?php endif; ?>
-            </div>
-            <div class="center-block">
-                <div class="btn btn-group">
-                    <form action="index.php?controller=animals&action=delete" method="post">
-                        <input type="hidden" id="idDel" name="idDel" value="<?php echo $Animal['id']; ?>" />
-                        <input type="submit" value="Supprimer" class="btn btn-danger"/>
-                    </form>
-                    <form>
-                        <a href="index.php?controller=animals&action=detail&id=<?php echo $Animal['id']; ?>" 
-                        class="btn btn-primary detail">Detail</a>  
-                    </form>
-                </div>
-            </div>
-        <?php endforeach; ?>
-        <hr/>
-    </section>
+
 </body>
 </html>
