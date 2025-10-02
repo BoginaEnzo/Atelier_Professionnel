@@ -60,7 +60,16 @@
             $Animal->setAnimal_statut($_POST["statut"]);
             $Animal->setAnimal_age($_POST["age"]);
             $Animal->setAnimal_race($_POST["race"]);
-            $Animal->setAnimal_photo($_POST["photo"]);
+            if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
+                $uploadDir = 'uploads/';
+                $fileName = basename($_FILES['photo']['name']);
+                $targetFile = $uploadDir . $fileName;
+                move_uploaded_file($_FILES['photo']['tmp_name'], $targetFile);
+                $Animal->setAnimalphoto($fileName); // Stocke juste le nom dans la base
+            } else {
+                $Animal->setAnimalphoto(null);
+            }
+
             if($Animal->insert()){
                 header('Location: index.php');
             }     
@@ -77,7 +86,7 @@
             $Animal->setAnimal_race($_POST["race"]);
             $Animal->setAnimal_photo($_POST["photo"]);
             if($Animal->update()){
-                header('Location: index.php');
+                header('Location: index.php'); 
             }     
         }
 
@@ -92,6 +101,7 @@
 
         // Méthode pour charger les vues
         function view($name, $data){
+            extract($data);
             require_once __DIR__ . "/../view/".$name."View.php";
         } 
     }

@@ -4,13 +4,13 @@
             private $table="animaux";
             private $connexion;
 
-            private $animal_id;
-            private $animal_nom;
-            private $animal_espece;
-            private $animal_statut;
-            private $animal_age;
-            private $animal_race;
-            private $animal_photo;
+            private $id;
+            private $nom;
+            private $espece;
+            private $statut;
+            private $age;
+            private $race;
+            private $photo;
 
             // Constructeur pour les connexions et les caractéristiques de l'animal
             public function __construct($connexion){
@@ -18,61 +18,62 @@
             }
 
             public function getAnimal_id(){
-                return $this->animal_id;
+                return $this->id;
             }
 
-            public function getAnimal_nom(){
-                return $this->animal_nom;
+            public function getAnimal_nom(){ 
+                return $this->nom;
             }
 
             public function getAnimal_espece(){
-                return $this->animal_espece;
+                return $this->espece;
             }
 
             public function getAnimal_statut(){
-                return $this->animal_statut;
+                return $this->statut;
             }
 
             public function getAnimal_age(){
-                return $this->animal_age;
+                return $this->age;
             }
 
             public function getAnimal_race(){
-                return $this->animal_race;
+                return $this->race;
             }
 
             public function getAnimal_photo(){
-                return $this->animal_photo;
+                return $this->photo;
             }
 
             // Setters pour chaque caractéristique de l'animal
             public function setAnimal_id($id){
-                $this->animal_id = $id;
+                $this->id = $id;
             }
 
             public function setAnimal_nom($nom){
-                $this->animal_nom = $nom;
+                $this->nom = $nom;
             }
 
             public function setAnimal_espece($espece){
-                $this->animal_espece = $espece;
+                $this->espece = $espece;
             }
 
             public function setAnimal_statut($statut){
-                $this->animal_statut = $statut;
+                $this->statut = $statut;
             }
 
             public function setAnimal_age($age){
-                $this->animal_age = $age;
+                $this->age = $age;
             }
 
             public function setAnimal_race($race){
-                $this->animal_race = $race;
+                $this->race = $race;
             }
 
-            public function setAnimal_photo($photo){
-                $this->animal_photo = $photo;
+            public function setAnimalphoto($photo) {
+                $this->photo = $photo;
             }
+
 
             // Méthodes pour les opérations CRUD
             // Récupérer tous les animaux
@@ -87,8 +88,8 @@
 
             // Récupérer un animal par son ID
             public function getById($id){
-                $query = $this->connexion->prepare("SELECT animal_id, animal_nom, animal_espece, animal_statut, animal_age, animal_race, animal_photo
-                FROM ".$this->table." WHERE animal_id = :id");
+                $query = $this->connexion->prepare("SELECT id, nom, espece, statut, age, race, photo
+                FROM ".$this->table." WHERE id = :id");
                 $query-> execute(array("id"=> $id));
                 $result = $query->fetchObject();
                 $this->connexion = null;
@@ -97,16 +98,16 @@
 
             // Insérer un nouvel animal dans la base de données
             public function insert(){
-                $query = $this->connexion->prepare("INSERT INTO ".$this->table."(animal_nom, animal_espece, animal_statut, animal_age, animal_race, animal_photo) 
+                $query = $this->connexion->prepare("INSERT INTO ".$this->table."(nom, espece, statut, age, race, photo) 
                 VALUES (:nom, :espece, :statut, :age, :race, :photo)");
 
                 $result = $query->execute(array(
-                    "nom"=>$this->animal_nom,
-                    "espece"=>$this->animal_espece,
-                    "statut"=>$this->animal_statut,
-                    "age"=>$this->animal_age,
-                    "race"=>$this->animal_race,
-                    "photo"=>$this->animal_photo,
+                    "nom"=>$this->nom,
+                    "espece"=>$this->espece,
+                    "statut"=>$this->statut,
+                    "age"=>$this->age,
+                    "race"=>$this->race,
+                    "photo"=>$this->photo,
                 ));
                 $this->connexion = null;
                 return $result;
@@ -114,17 +115,17 @@
 
             // Mettre à jour les informations d'un animal
             public function update(){
-                $query = $this->connexion->prepare("UPDATE ".$this->table." SET animal_nom = :nom, animal_espece = :espece, animal_statut = :statut, animal_age = :age, animal_race = :race, animal_photo = :photo
-                WHERE animal_id = :id");
+                $query = $this->connexion->prepare("UPDATE ".$this->table." SET nom = :nom, espece = :espece, statut = :statut, age = :age, race = :race, photo = :photo
+                WHERE id = :id");
 
                 $result = $query->execute(array(
-                    "id" =>$this-> animal_id,
-                    "nom"=>$this->animal_nom,
-                    "espece"=>$this->animal_espece,
-                    "statut"=>$this->animal_statut,
-                    "age"=>$this->animal_age,
-                    "race"=>$this->animal_race,
-                    "photo"=>$this->animal_photo,
+                    "id" =>$this->id,
+                    "nom"=>$this->nom,
+                    "espece"=>$this->espece,
+                    "statut"=>$this->statut,
+                    "age"=>$this->age,
+                    "race"=>$this->race,
+                    "photo"=>$this->photo,
                 ));
                 $this->connexion = null;
                 return $result;
@@ -132,9 +133,9 @@
 
             // Supprimer un animal de la base de données
             public function delete(){
-                $query = $this->connexion->prepare("DELETE FROM ".$this->table." WHERE animal_id = :id");
+                $query = $this->connexion->prepare("DELETE FROM ".$this->table." WHERE id = :id");
                 $result = $query->execute(array(
-                    "id" =>$this->animal_id
+                    "id" =>$this->id
                 ));
                 $this->connexion = null;
                 return $result;
