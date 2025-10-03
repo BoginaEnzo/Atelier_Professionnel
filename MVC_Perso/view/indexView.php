@@ -32,11 +32,11 @@
         <section style="max-width: 900px; width: 100%;">
             <?php foreach ($data['animal'] as $Animal): ?>
                 <div style="border: 1px solid #ccc; padding: 15px; margin-bottom: 10px; text-align: center;">
-                    <strong><?= htmlspecialchars($Animal['nom']) ?></strong><br>
-                    Espèce : <?= htmlspecialchars($Animal['espece']) ?><br>
-                    Âge : <?= htmlspecialchars($Animal['age']) ?><br>
-                    Race : <?= htmlspecialchars($Animal['race']) ?><br>
-                    Statut : <?= htmlspecialchars($Animal['statut']) ?><br>
+                    <strong><?= ($Animal['nom']) ?></strong><br>
+                    Espèce : <?= ($Animal['espece']) ?><br>
+                    Âge : <?= ($Animal['age']) ?><br>
+                    Race : <?= ($Animal['race']) ?><br>
+                    Statut : <?= ($Animal['statut']) ?><br>
                     <?php if (!empty($Animal['photo'])): ?>
                         <img src="uploads/<?= htmlspecialchars($Animal['photo']) ?>" alt="Photo de <?= htmlspecialchars($Animal['nom']) ?>" style="max-width: 200px;">
                     <?php else: ?>
@@ -46,7 +46,8 @@
                     <div class="btn-group" style="margin-top: 10px;">
                         <!-- Modifier bouton detail -->
                         <form>
-                            <a href="index.php?controller=animal&action=detail&id=<?= htmlspecialchars($Animal['id']) ?>" class="btn btn-primary" style="align:center; margin-bottom:5px;">Modifier</a>
+                            <a href="index.php?controller=animal&action=detail&id=<?= htmlspecialchars($Animal['id']) ?>" 
+                            class="btn btn-primary" style="align:center; margin-bottom:5px;">Détails</a>
                         </form>
 
                         <!-- Supprimer bouton -->

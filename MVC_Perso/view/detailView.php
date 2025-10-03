@@ -11,12 +11,12 @@
         <h2>Détails de l'animal</h2>
 
         <form action="index.php?controller=animal&action=maj" method="post" enctype="multipart/form-data" class="form-horizontal">
-            <input type="hidden" name="id" value="<?= htmlspecialchars($animal->id ?? '') ?>" />
+            <input type="hidden" name="id" value="<?= ($animal->id ?? '') ?>" />
 
             <div class="form-group">
                 <label for="nom" class="control-label col-sm-2">Nom</label>
                 <div class="col-sm-10">
-                    <input type="text" name="nom" value="<?= htmlspecialchars($animal->nom ?? '') ?>" required class="form-control" />
+                    <input type="text" name="nom" value="<?= ($animal->nom ?? '') ?>" required class="form-control" />
                 </div>
             </div>
 
@@ -44,14 +44,14 @@
             <div class="form-group">
                 <label for="age" class="control-label col-sm-2">Âge</label>
                 <div class="col-sm-10">
-                    <input type="number" name="age" value="<?= htmlspecialchars($animal->age ?? '') ?>" required class="form-control" />
+                    <input type="number" name="age" value="<?= ($animal->age ?? '') ?>" required class="form-control" />
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="race" class="control-label col-sm-2">Race</label>
                 <div class="col-sm-10">
-                    <input type="text" name="race" value="<?= htmlspecialchars($animal->race ?? '') ?>" required class="form-control" />
+                    <input type="text" name="race" value="<?= ($animal->race ?? '') ?>" required class="form-control" />
                 </div>
             </div>
 
@@ -59,7 +59,7 @@
                 <label for="photo" class="control-label col-sm-2">Photo</label>
                 <div class="col-sm-10">
                     <?php if (!empty($animal->photo)): ?>
-                        <img src="uploads/<?= htmlspecialchars($animal->photo) ?>" alt="Photo de l'animal" style="max-width:150px;" />
+                        <img src="uploads/<?= ($animal->photo) ?>" alt="Photo de l'animal" style="max-width:150px;" />
                     <?php else: ?>
                         <p>Aucune photo disponible</p>
                     <?php endif; ?>
