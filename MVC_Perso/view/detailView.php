@@ -6,6 +6,15 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
+    <!--Menu simple-->
+    <header style="margin-bottom:20px;">
+        <nav class="navbar navbar-default" >
+            <ul class="nav navbar-nav navbar-center" style="margin-top: 5px; display: flex; justify-content: center; width: 100%;">
+                <li class="active"><a href="index.php">Accueil</a></li>
+                <li class="active"><a href="view/ajouter.php">Ajouter un animal</a></li>
+            </ul>
+        </nav>
+    </header>
     <!-- Détails de l'animal -->
     <div class="container" style="display:flex; flex-direction:column; align-items:center;">
         <h2>Détails de l'animal</h2>
@@ -70,7 +79,6 @@
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <input type="submit" value="Modifier" class="btn btn-primary" />
-                    <a href="index.php" class="btn btn-primary detail">Accueil</a>
                 </div>
             </div>
         </form>
