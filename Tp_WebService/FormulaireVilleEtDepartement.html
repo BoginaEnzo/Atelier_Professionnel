@@ -115,9 +115,17 @@ input[type=submit] {
 <br />
 <div id="load" style="position : absolute; visibility : visible" class="loader"></div>
 <br />
+<br />
+<br />
+<br />
+<br />
+
 <p id="meteo" style="position : absolute;"></p>
 <br /><br />
 <img id="imgMeteo" style="visibility:hidden" src="" alt="" width="150" height="100">
+
+<p id="meteo"></p>
+
 
 
 <script>
@@ -265,6 +273,8 @@ function MeteoJour(ville, tableauInfoVille, MeteoDescription){
       console.log(weatherCode);
       var description = MeteoDescription[weatherCode];
       console.log(description);
+      document.getElementById("meteo").textContent = "Météo pour " + ville + " : " + description;
+
     }
   };
 }
