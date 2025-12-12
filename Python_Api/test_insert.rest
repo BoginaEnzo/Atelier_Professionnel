@@ -1,0 +1,11 @@
+POST http://127.0.0.1:5000/api/insert_user
+Content-Type: application/json
+
+{
+    "Id": 102,  
+    "FirstName": "Morpheus",
+    "LastName": "Leader",
+    "Username": "morpheus",
+    "Password": "redpill",
+    "EnrollmentDate": "2025-12-12T10:45:00" 
+}
