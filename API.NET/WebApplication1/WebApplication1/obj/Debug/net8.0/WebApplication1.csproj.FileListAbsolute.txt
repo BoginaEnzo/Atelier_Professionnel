@@ -245,3 +245,5 @@ C:\wamp64\www\Atelier_Professionnel\API.NET\WebApplication1\WebApplication1\bin\
 C:\wamp64\www\Atelier_Professionnel\API.NET\WebApplication1\WebApplication1\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\wamp64\www\Atelier_Professionnel\API.NET\WebApplication1\WebApplication1\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\wamp64\www\Atelier_Professionnel\API.NET\WebApplication1\WebApplication1\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\wamp64\www\Atelier_Professionnel\API.NET\WebApplication1\WebApplication1\bin\Debug\net8.0\WebApplication1.xml
+C:\wamp64\www\Atelier_Professionnel\API.NET\WebApplication1\WebApplication1\obj\Debug\net8.0\WebApplication1.xml

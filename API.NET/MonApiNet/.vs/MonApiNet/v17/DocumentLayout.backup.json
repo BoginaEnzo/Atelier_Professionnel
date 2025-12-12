@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "MonApiNet.http",
               "ToolTip": "C:\\wamp64\\www\\Atelier_Professionnel\\API.NET\\MonApiNet\\MonApiNet.http",
               "RelativeToolTip": "MonApiNet.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
               "WhenOpened": "2025-11-07T10:44:24.477Z",
               "EditorCaption": ""
@@ -52,15 +52,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MonApiNet",
+              "Title": "MonApiNet.csproj",
               "DocumentMoniker": "C:\\wamp64\\www\\Atelier_Professionnel\\API.NET\\MonApiNet\\MonApiNet.csproj",
               "RelativeDocumentMoniker": "MonApiNet.csproj",
               "ToolTip": "C:\\wamp64\\www\\Atelier_Professionnel\\API.NET\\MonApiNet\\MonApiNet.csproj",
               "RelativeToolTip": "MonApiNet.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-07T10:36:19.05Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T10:36:19.05Z"
             },
             {
               "$type": "Document",
@@ -72,8 +71,7 @@
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAH0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T10:28:15.063Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T10:28:15.063Z"
             },
             {
               "$type": "Document",
@@ -85,8 +83,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-07T10:25:17.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T10:25:17.025Z"
             },
             {
               "$type": "Document",
@@ -111,8 +108,7 @@
               "RelativeToolTip": "Entities\\DemoContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T10:19:08.557Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T10:19:08.557Z"
             }
           ]
         }

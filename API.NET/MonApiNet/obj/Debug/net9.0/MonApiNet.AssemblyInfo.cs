@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MonApiNet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a588fe3cbf2c7c1776ee2bb808fe7fc94a1d740")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc535fb48e5ff484923493c9738b43a71dfa91dc")]
 [assembly: System.Reflection.AssemblyProductAttribute("MonApiNet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MonApiNet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

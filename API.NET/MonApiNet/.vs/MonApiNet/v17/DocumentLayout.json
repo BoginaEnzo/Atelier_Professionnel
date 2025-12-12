@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\wamp64\\www\\Atelier_Professionnel\\API.NET\\MonApiNet\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EC3CB19E-C54A-0831-90AE-61CADB66880B}|MonApiNet.csproj|c:\\wamp64\\www\\atelier_professionnel\\api.net\\monapinet\\monapinet.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{EC3CB19E-C54A-0831-90AE-61CADB66880B}|MonApiNet.csproj|solutionrelative:monapinet.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EC3CB19E-C54A-0831-90AE-61CADB66880B}|MonApiNet.csproj|c:\\wamp64\\www\\atelier_professionnel\\api.net\\monapinet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EC3CB19E-C54A-0831-90AE-61CADB66880B}|MonApiNet.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EC3CB19E-C54A-0831-90AE-61CADB66880B}|MonApiNet.csproj|c:\\wamp64\\www\\atelier_professionnel\\api.net\\monapinet\\monapinet.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
       "RelativeMoniker": "D:0:0:{EC3CB19E-C54A-0831-90AE-61CADB66880B}|MonApiNet.csproj|solutionrelative:monapinet.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC3CB19E-C54A-0831-90AE-61CADB66880B}|MonApiNet.csproj|c:\\wamp64\\www\\atelier_professionnel\\api.net\\monapinet\\monapinet.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{EC3CB19E-C54A-0831-90AE-61CADB66880B}|MonApiNet.csproj|solutionrelative:monapinet.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EC3CB19E-C54A-0831-90AE-61CADB66880B}|MonApiNet.csproj|c:\\wamp64\\www\\atelier_professionnel\\api.net\\monapinet\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,25 +34,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MonApiNet.http",
               "DocumentMoniker": "C:\\wamp64\\www\\Atelier_Professionnel\\API.NET\\MonApiNet\\MonApiNet.http",
               "RelativeDocumentMoniker": "MonApiNet.http",
               "ToolTip": "C:\\wamp64\\www\\Atelier_Professionnel\\API.NET\\MonApiNet\\MonApiNet.http",
               "RelativeToolTip": "MonApiNet.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
               "WhenOpened": "2025-11-07T10:44:24.477Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MonApiNet",
+              "DocumentIndex": 0,
+              "Title": "MonApiNet.csproj",
               "DocumentMoniker": "C:\\wamp64\\www\\Atelier_Professionnel\\API.NET\\MonApiNet\\MonApiNet.csproj",
               "RelativeDocumentMoniker": "MonApiNet.csproj",
               "ToolTip": "C:\\wamp64\\www\\Atelier_Professionnel\\API.NET\\MonApiNet\\MonApiNet.csproj",
@@ -72,8 +72,7 @@
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAH0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T10:28:15.063Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T10:28:15.063Z"
             },
             {
               "$type": "Document",
@@ -85,12 +84,11 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-07T10:25:17.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T10:25:17.025Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\wamp64\\www\\Atelier_Professionnel\\API.NET\\MonApiNet\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -111,8 +109,7 @@
               "RelativeToolTip": "Entities\\DemoContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T10:19:08.557Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T10:19:08.557Z"
             }
           ]
         }
