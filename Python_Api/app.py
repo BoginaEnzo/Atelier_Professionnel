@@ -39,5 +39,34 @@ class User(db.Model):
             'EnrollmentDate': self.EnrollmentDate.isoformat() if self.EnrollmentDate else None
         }
 
+# app.py (Suite)
+
+@app.route('/api/user', methods=['GET'])
+def get_all_users():
+    """
+    Récupère la liste de tous les utilisateurs enregistrés.
+    (Équivalent de GetBots dans le tuto .NET)
+    """
+    try:
+        # 1. Requête à la BDD (Équivalent de DBContext.Bots.Select(...).ToListAsync())
+        users = User.query.all()
+
+        # 2. Vérification si la liste est vide (Équivalent de if (List.Count < 0))
+        if not users:
+            # Code de réponse 404 - Not Found
+            return jsonify({"message": "Aucun utilisateur trouvé."}), 404
+
+        # 3. Sérialisation des données
+        # Utilisation de la méthode to_dict() définie dans la classe User
+        users_list = [user.to_dict() for user in users]
+
+        # 4. Retourner la réponse JSON (Équivalent de return List)
+        return jsonify(users_list), 200 # Code de réponse 200 - OK
+
+    except Exception as e:
+        # Gérer les erreurs de connexion à la BDD
+        print(f"Erreur lors de la récupération des utilisateurs: {e}")
+        return jsonify({"message": "Erreur interne du serveur."}), 500 # Code de réponse 500
+
 if __name__ == '__main__':
     app.run(debug=True)
