@@ -80,7 +80,7 @@ def UpdateUser(id_crea, nom, prenom, pseudo, mot_de_passe):
             
         if response.status_code == 201 or response.status_code == 200 or response.status_code == 204:
             if response.status_code == 204:
-                return "Succès (204 No Content)"
+                return "Succès"
             return response.json()
         else:
             print(f"Erreur {response.status_code} : {response.text}")
@@ -108,7 +108,7 @@ def DeleteID(id_del):
         
     if response.status_code == 201 or response.status_code == 200 or response.status_code == 204:
             if response.status_code == 204:
-                return "Succès (204 No Content)"
+                return "Succès"
             return response.json()
 
 id_del = 5
