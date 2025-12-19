@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\wamp64\\www\\Atelier_Professionnel\\API.NET\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C7C97BEF-6CEA-4F68-8FF8-BEF9020610A4}|WebApplication1\\WebApplication1.csproj|c:\\wamp64\\www\\atelier_professionnel\\api.net\\webapplication1\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C7C97BEF-6CEA-4F68-8FF8-BEF9020610A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C7C97BEF-6CEA-4F68-8FF8-BEF9020610A4}|WebApplication1\\WebApplication1.csproj|c:\\wamp64\\www\\atelier_professionnel\\api.net\\webapplication1\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C7C97BEF-6CEA-4F68-8FF8-BEF9020610A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7C97BEF-6CEA-4F68-8FF8-BEF9020610A4}|WebApplication1\\WebApplication1.csproj|c:\\wamp64\\www\\atelier_professionnel\\api.net\\webapplication1\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C7C97BEF-6CEA-4F68-8FF8-BEF9020610A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C7C97BEF-6CEA-4F68-8FF8-BEF9020610A4}|WebApplication1\\WebApplication1.csproj|c:\\wamp64\\www\\atelier_professionnel\\api.net\\webapplication1\\webapplication1\\webapplication1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -46,7 +46,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\wamp64\\www\\Atelier_Professionnel\\API.NET\\WebApplication1\\WebApplication1\\appsettings.json",
               "RelativeDocumentMoniker": "WebApplication1\\appsettings.json",
@@ -54,20 +54,20 @@
               "RelativeToolTip": "WebApplication1\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-12T07:39:59.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T07:39:59.566Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\wamp64\\www\\Atelier_Professionnel\\API.NET\\WebApplication1\\WebApplication1\\Program.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
               "ToolTip": "C:\\wamp64\\www\\Atelier_Professionnel\\API.NET\\WebApplication1\\WebApplication1\\Program.cs",
               "RelativeToolTip": "WebApplication1\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAADAAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T10:55:00.845Z"
+              "WhenOpened": "2025-11-07T10:55:00.845Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
