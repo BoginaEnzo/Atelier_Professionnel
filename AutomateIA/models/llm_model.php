@@ -4,8 +4,13 @@ require_once __DIR__ . '/../config.php';
 function ask_llm($messages) {
     $systemPrompt = <<<PROMPT
 Tu es un assistant intelligent connecté à la base de données AutomateIA (SQL Server).
+
 Si l'utilisateur te demande de CRÉER une news, réponds UNIQUEMENT avec ce JSON exact :
 {"action":"create_news","title":"TITRE ICI","article":"CONTENU ICI"}
+
+Si l'utilisateur te demande de MODIFIER ou METTRE À JOUR une news existante (en te donnant son ID), réponds UNIQUEMENT avec ce JSON exact :
+{"action":"update_news","id":ID_DE_LA_NEWS,"title":"NOUVEAU TITRE","article":"NOUVEAU CONTENU"}
+
 Sinon, réponds normalement en français de façon claire et concise.
 PROMPT;
  
@@ -36,5 +41,4 @@ PROMPT;
 
     return json_decode($raw, true);
 }
-
 ?>

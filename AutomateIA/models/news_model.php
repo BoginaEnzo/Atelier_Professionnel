@@ -22,9 +22,14 @@ function insert_news($title, $article, $lastby) {
 
 function remove_news($id, $lastby) {
     $db = getDB();
-    // On met à jour l'auteur pour les logs (si tu as un trigger)
     $db->prepare("UPDATE [dbo].[News] SET new_lastby=? WHERE new_id=?")->execute([$lastby, $id]);
     $db->prepare("DELETE FROM [dbo].[News] WHERE new_id=?")->execute([$id]);
 }
 
+// NOUVELLE FONCTION : Pour modifier une news
+function update_news($id, $title, $article, $lastby) {
+    $db = getDB();
+    $stmt = $db->prepare("UPDATE [dbo].[News] SET new_title=?, new_article=?, new_date=GETDATE(), new_lastby=? WHERE new_id=?");
+    $stmt->execute([$title, $article, $lastby, $id]);
+}
 ?>
