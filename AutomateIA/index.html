@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutomateIA — News Assistant</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-logo">Automate<span>IA</span></div>
+    <div class="topbar-sep"></div>
+    <div class="topbar-status">
+      <div class="dot" id="statusDot"></div>
+      <span id="statusText">Vérification LLM…</span>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <section class="chat-panel">
+      <div class="panel-header">
+        <span class="panel-title">💬 Chat Assistant</span>
+        <span class="token-badge" id="tokenInfo">— tokens</span>
+      </div>
+      
+      <div class="messages" id="messages">
+        <div class="msg msg-bot">
+          <div class="bubble">
+            Bonjour ! Je suis connecté à la base <strong>AutomateIA</strong>.<br>
+            Je peux <strong>lire, créer ou analyser</strong> des News. Essayez un exemple ci-dessous ✨
+          </div>
+        </div>
+      </div>
+      
+      <div class="chat-input-area">
+        <div class="input-row">
+          <div class="input-wrap">
+            <textarea id="chatInput" rows="1" placeholder="Écrivez votre message… (Entrée pour envoyer)"></textarea>
+          </div>
+          <button class="btn btn-primary" id="sendBtn" onclick="sendMessage()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+        <div class="chat-hints">
+          <div class="hint" onclick="setInput('Crée une news intitulée «Mise à jour système» avec un article sur la maintenance planifiée')">+ Créer une news</div>
+          <div class="hint" onclick="setInput('Combien de news sont enregistrées dans la base ?')">📊 Stats</div>
+          <div class="hint" onclick="setInput('Explique-moi la structure de la table LogsNews')">🔍 Explique la DB</div>
+          <div class="hint" onclick="setInput('Quels types d\'événements sont loggés dans LogsNews ?')">📋 Logs</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="news-panel">
+      <div class="news-tabs">
+        <div class="tab active" onclick="switchTab('news')">📰 News</div>
+        <div class="tab" onclick="switchTab('logs')">📋 Logs</div>
+      </div>
+      
+      <div class="tab-content active" id="tab-news">
+        <div class="tab-toolbar">
+          <span class="count-badge" id="newsCount">— articles</span>
+          <div style="display:flex;gap:8px">
+            <button class="btn-sm btn-refresh" onclick="loadNews()">↺ Rafraîchir</button>
+            <button class="btn-sm btn-add" onclick="openModal()">+ Nouvelle</button>
+          </div>
+        </div>
+        <div class="news-list" id="newsList">
+          <div class="loader">Chargement</div>
+        </div>
+      </div>
+      
+      <div class="tab-content" id="tab-logs">
+        <div class="tab-toolbar">
+          <span class="count-badge" id="logsCount">— entrées</span>
+          <button class="btn-sm btn-refresh" onclick="loadLogs()">↺ Rafraîchir</button>
+        </div>
+        <div class="logs-list" id="logsList">
+          <div class="loader">Chargement</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <h3>📰 Nouvelle news</h3>
+      <div class="field">
+        <label>Titre</label>
+        <input type="text" id="m_title" placeholder="Titre de la news…" />
+      </div>
+      <div class="field">
+        <label>Article</label>
+        <textarea id="m_article" placeholder="Contenu de l'article…"></textarea>
+      </div>
+      <div class="field">
+        <label>Auteur (lastby)</label>
+        <input type="text" id="m_lastby" value="CHAT" />
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-sm btn-cancel" onclick="closeModal()">Annuler</button>
+        <button class="btn btn-sm btn-save" onclick="createNewsManual()">Créer</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+
+</body>
+</html>
