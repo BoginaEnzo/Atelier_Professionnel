@@ -27,34 +27,27 @@ try {
             $title   = trim($body['title']   ?? '');
             $article = trim($body['article'] ?? '');
             $lastby  = trim($body['lastby']  ?? 'CHAT');
-
             if (!$title || !$article) throw new Exception('Titre et article requis.');
-            
             $id = insert_news($title, $article, $lastby);
             echo json_encode(['success' => true, 'id' => $id, 'message' => "News #$id créée."]);
             break;
 
-        // NOUVEAU : Action pour mettre à jour directement via l'API
         case 'update_news':
             $body    = json_decode(file_get_contents('php://input'), true);
             $id      = (int)($body['id']     ?? 0);
             $title   = trim($body['title']   ?? '');
             $article = trim($body['article'] ?? '');
             $lastby  = trim($body['lastby']  ?? 'CHAT');
-
-            if (!$id || !$title || !$article) throw new Exception('ID, titre et article requis.');
-            
+            if (!$id) throw new Exception('ID requis pour la modification.');
             update_news($id, $title, $article, $lastby);
-            echo json_encode(['success' => true, 'message' => "News #$id modifiée avec succès."]);
+            echo json_encode(['success' => true, 'message' => "News #$id modifiée."]);
             break;
 
         case 'delete_news':
             $body   = json_decode(file_get_contents('php://input'), true);
             $id     = (int)($body['id']    ?? 0);
             $lastby = trim($body['lastby'] ?? 'JFE');
-
             if (!$id) throw new Exception('ID manquant.');
-            
             remove_news($id, $lastby);
             echo json_encode(['success' => true, 'message' => "News #$id supprimée."]);
             break;
@@ -63,61 +56,47 @@ try {
             $body     = json_decode(file_get_contents('php://input'), true);
             $messages = $body['messages'] ?? [];
             $lastby   = trim($body['lastby'] ?? 'CHAT');
-
             if (empty($messages)) throw new Exception('Messages manquants.');
 
+            // Appel au LLM
             $result  = ask_llm($messages);
             $content = trim($result['choices'][0]['message']['content'] ?? '');
             $usage   = $result['usage'] ?? null;
 
-            // ANALYSE DE LA REPONSE DE L'IA
+            // Analyse de la réponse (Détection d'action JSON)
             $decoded = json_decode($content, true);
             if (json_last_error() === JSON_ERROR_NONE && isset($decoded['action'])) {
                 
-                // Si l'IA veut CRÉER
+                // CAS 1 : CREATION
                 if ($decoded['action'] === 'create_news') {
-                    $title   = $decoded['title']   ?? '';
-                    $article = $decoded['article'] ?? '';
-                    
-                    $newId = insert_news($title, $article, $lastby);
-                    
+                    $newId = insert_news($decoded['title'] ?? '', $decoded['article'] ?? '', $lastby);
                     echo json_encode([
-                        'success'   => true,
-                        'reply'     => "✅ News **\"$title\"** créée avec succès (ID #$newId) !",
+                        'success' => true,
+                        'reply' => "✅ News créée avec succès (ID #$newId) !",
                         'db_action' => 'create_news',
-                        'new_id'    => $newId,
-                        'usage'     => $usage
+                        'usage' => $usage
                     ]);
                     break;
                 }
 
-                // Si l'IA veut MODIFIER
+                // CAS 2 : MODIFICATION (PARTIELLE OU TOTALE)
                 if ($decoded['action'] === 'update_news') {
-                    $id      = (int)($decoded['id'] ?? 0);
-                    $title   = $decoded['title']   ?? '';
-                    $article = $decoded['article'] ?? '';
-                    
+                    $id = (int)($decoded['id'] ?? 0);
                     if ($id > 0) {
-                        update_news($id, $title, $article, $lastby);
-                        
+                        update_news($id, $decoded['title'] ?? null, $decoded['article'] ?? null, $lastby);
                         echo json_encode([
-                            'success'   => true,
-                            'reply'     => "✏️ News #$id **\"$title\"** modifiée avec succès !",
-                            'db_action' => 'create_news', // Astuce: on renvoie "create_news" pour forcer le rafraîchissement côté Javascript
-                            'new_id'    => $id,
-                            'usage'     => $usage
+                            'success' => true,
+                            'reply' => "✏️ News #$id mise à jour !",
+                            'db_action' => 'create_news', // On force le rafraîchissement des listes côté client
+                            'usage' => $usage
                         ]);
                         break;
                     }
                 }
             }
 
-            // Réponse classique si c'est juste du texte
-            echo json_encode([
-                'success' => true,
-                'reply'   => $content,
-                'usage'   => $usage
-            ]);
+            // Réponse textuelle simple
+            echo json_encode(['success' => true, 'reply' => $content, 'usage' => $usage]);
             break;
 
         default:

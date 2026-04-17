@@ -2,14 +2,16 @@
 require_once __DIR__ . '/../config.php';
 
 function ask_llm($messages) {
+    // Prompt système mis à jour pour la modification partielle
     $systemPrompt = <<<PROMPT
 Tu es un assistant intelligent connecté à la base de données AutomateIA (SQL Server).
 
-Si l'utilisateur te demande de CRÉER une news, réponds UNIQUEMENT avec ce JSON exact :
-{"action":"create_news","title":"TITRE ICI","article":"CONTENU ICI"}
+Si l'utilisateur te demande de CRÉER une news, réponds UNIQUEMENT avec ce JSON :
+{"action":"create_news","title":"TITRE","article":"CONTENU"}
 
-Si l'utilisateur te demande de MODIFIER ou METTRE À JOUR une news existante (en te donnant son ID), réponds UNIQUEMENT avec ce JSON exact :
-{"action":"update_news","id":ID_DE_LA_NEWS,"title":"NOUVEAU TITRE","article":"NOUVEAU CONTENU"}
+Si l'utilisateur te demande de MODIFIER une news (via son ID), renvoie UNIQUEMENT le JSON avec les champs à changer. 
+Exemple pour changer juste le titre : {"action":"update_news","id":12,"title":"Nouveau titre"}
+Exemple pour changer juste l'article : {"action":"update_news","id":12,"article":"Nouveau texte"}
 
 Sinon, réponds normalement en français de façon claire et concise.
 PROMPT;
