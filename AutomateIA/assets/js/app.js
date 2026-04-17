@@ -43,6 +43,65 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+/**
+ * Envoie le message saisi par l'utilisateur au modèle d'IA
+ */
+async function sendMessage() {
+  const input = document.getElementById('chatInput');
+  const msg = input.value.trim(); 
+  
+  if (!msg) return; // Si le champ est vide, on ne fait rien
+
+  // 1. Affiche ton message immédiatement dans le chat
+  addMsg('user', msg); 
+  input.value = ''; // Vide le champ de saisie
+  input.style.height = 'auto';
+  
+  // Ajoute ton message à l'historique pour que l'IA s'en souvienne
+  history.push({ role: 'user', content: msg });
+  
+  // 2. Prépare l'envoi vers le serveur
+  const sendBtn = document.getElementById('sendBtn');
+  sendBtn.disabled = true; // Empêche de cliquer plusieurs fois
+  const typingEl = addTyping(); // Affiche les "..." de réflexion
+  
+  try {
+    // C'est ICI que la requête est envoyée au fichier api.php
+    const r = await fetch(API + '?action=chat', { 
+      method: 'POST', 
+      headers: { 'Content-Type': 'application/json' }, 
+      body: JSON.stringify({ 
+        messages: history, 
+        lastby: AUTHOR 
+      }) 
+    });
+    
+    const d = await r.json(); // On récupère la réponse du PHP
+    
+    typingEl.remove(); // On enlève les "..."
+    
+    if (d.success) {
+      const reply = d.reply || '…';
+      // Affiche la réponse de l'IA
+      addMsg('bot', reply, d.db_action === 'create_news' ? 'success' : '');
+      history.push({ role: 'assistant', content: reply });
+      
+      // Si une action DB a eu lieu (création/modif), on rafraîchit les listes
+      if (d.db_action === 'create_news') { 
+        setTimeout(loadNews, 500); 
+        setTimeout(loadLogs, 600); 
+      }
+    } else {
+      addMsg('sys', '⚠ ' + (d.error || 'Erreur inconnue'), 'error');
+    }
+  } catch (e) {
+    typingEl.remove();
+    addMsg('sys', '⚠ Impossible de joindre l\'API PHP : ' + e.message, 'error');
+  }
+  
+  sendBtn.disabled = false; // Réactive le bouton
+}
+
 /* ==========================================================================
    MÉCANIQUES DE CHAT (La prise de commande)
    ========================================================================== */
