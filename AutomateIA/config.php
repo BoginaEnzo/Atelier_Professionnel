@@ -10,5 +10,5 @@ define('DB_SERVER',   '127.0.0.1,1433');
 define('DB_NAME',     'AutomateIA');
 define('DB_USER',     'IA');
 define('DB_PASS',     'admin');
-
+ 
 ?>

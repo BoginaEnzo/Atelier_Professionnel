@@ -8,7 +8,7 @@ Si l'utilisateur te demande de CRÉER une news, réponds UNIQUEMENT avec ce JSON
 {"action":"create_news","title":"TITRE ICI","article":"CONTENU ICI"}
 Sinon, réponds normalement en français de façon claire et concise.
 PROMPT;
-
+ 
     $payload = [
         'model'       => LM_MODEL,
         'messages'    => array_merge([['role' => 'system', 'content' => $systemPrompt]], $messages),

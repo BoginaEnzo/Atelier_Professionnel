@@ -5,7 +5,7 @@ const AUTHOR = 'CHAT';
 // État de l'application
 let history = [];      // Stocke l'historique de la conversation
 let totalTokens = 0;   // Compteur de tokens utilisés par l'IA
-
+ 
 /**
  * Initialisation au chargement de la page
  */

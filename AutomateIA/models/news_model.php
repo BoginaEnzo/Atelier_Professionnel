@@ -1,6 +1,6 @@
 <?php
 require_once 'db_model.php';
-
+ 
 function get_all_news($limit = 50) {
     $db = getDB();
     $stmt = $db->query("SELECT TOP $limit new_id, new_title, new_article, new_date, new_lastby FROM [dbo].[News] ORDER BY new_date DESC");
