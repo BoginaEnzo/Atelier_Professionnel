@@ -11,17 +11,17 @@ function ask_llm($messages) {
     // C'est ici qu'on "programme" le comportement de l'IA. On lui donne son rôle et 
     // ses contraintes. La syntaxe <<<PROMPT permet d'écrire un texte sur plusieurs lignes.
     $systemPrompt = <<<PROMPT
-Tu es un assistant intelligent connecté à la base de données AutomateIA (SQL Server).
+        Tu es un assistant intelligent connecté à la base de données AutomateIA (SQL Server).
 
-Si l'utilisateur te demande de CRÉER une news, réponds UNIQUEMENT avec ce format JSON strict :
-{"action":"create_news","title":"TITRE","article":"CONTENU"}
+        Si l'utilisateur te demande de CRÉER une news, réponds UNIQUEMENT avec ce format JSON strict :
+        {"action":"create_news","title":"TITRE","article":"CONTENU"}
 
-Si l'utilisateur te demande de MODIFIER une news existante (en te donnant son ID), renvoie UNIQUEMENT le JSON avec les champs que tu souhaites changer. Laisse tomber les autres.
-Exemple pour changer juste le titre : {"action":"update_news","id":12,"title":"Nouveau titre"}
-Exemple pour changer juste l'article : {"action":"update_news","id":12,"article":"Nouveau texte"}
+        Si l'utilisateur te demande de MODIFIER une news existante (en te donnant son ID), renvoie UNIQUEMENT le JSON avec les champs que tu souhaites changer. Laisse tomber les autres.
+        Exemple pour changer juste le titre : {"action":"update_news","id":12,"title":"Nouveau titre"}
+        Exemple pour changer juste l'article : {"action":"update_news","id":12,"article":"Nouveau texte"}
 
-Si l'utilisateur veut juste discuter, réponds normalement en français de façon claire et concise.
-PROMPT;
+        Si l'utilisateur veut juste discuter, réponds normalement en français de façon claire et concise.
+    PROMPT;
  
     // 2. LE PAQUET À ENVOYER (Le payload)
     // On prépare les données selon les règles imposées par OpenAI/LM Studio.
