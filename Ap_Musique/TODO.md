@@ -1,0 +1,4 @@
+- [ ] Create AuthController.php with login method
+- [ ] Create login view (app/Views/auth/login.php)
+- [ ] Add route for /login in Routes.php
+- [ ] Add account logo (SVG) at top right in projetK_Enzo.php linking to /login
